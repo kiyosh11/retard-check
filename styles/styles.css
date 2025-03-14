@@ -1,0 +1,328 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Impact', sans-serif;
+  background: linear-gradient(135deg, #800080, #ffa500, #00ff00);
+  background-size: 300% 300%;
+  animation: glitch-bg 8s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes glitch-bg {
+  0% { background-position: 0% 0%; }
+  20% { background-position: 100% 100%; filter: brightness(1.2); }
+  40% { background-position: 50% 50%; }
+  60% { background-position: 80% 20%; filter: brightness(0.8); }
+  100% { background-position: 0% 0%; }
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 5rem;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #ffa500, 0 0 30px #000;
+  animation: glitch 2s infinite;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.title span {
+  display: inline-block;
+  animation: wiggle 0.5s infinite alternate;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-5px, 5px); }
+  40% { transform: translate(5px, -5px); }
+  60% { transform: translate(-3px, 3px); }
+  80% { transform: translate(3px, -3px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+.intro {
+  font-size: 1.8rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px #ff00ff, 0 0 15px #000;
+  text-align: center;
+  margin: 20px 0 40px;
+  text-transform: uppercase;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.quiz-container {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 2rem;
+  border-radius: 25px;
+  border: 6px dashed #00ff00;
+  box-shadow: 0 0 30px #ffa500, inset 0 0 15px #ff00ff;
+  max-width: 90%;
+  width: 600px;
+  box-sizing: border-box;
+  animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  5% { opacity: 0.95; }
+  10% { opacity: 1; }
+  15% { opacity: 0.9; }
+  20% { opacity: 1; }
+}
+
+.question {
+  font-size: 2rem;
+  color: #00ff00;
+  text-shadow: 0 0 10px #800080, 0 0 20px #000;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.option-btn {
+  background: #ff00ff;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 5px solid #00ffff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  flex: 1 1 45%;
+  max-width: 45%;
+  box-shadow: 0 0 15px #ffa500;
+}
+
+.option-btn:hover {
+  background: #00ff00;
+  color: #000;
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 25px #ff00ff, 0 0 40px #ffa500;
+}
+
+.progress {
+  font-size: 1.2rem;
+  color: #ffa500;
+  text-shadow: 0 0 8px #ff00ff;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+.result {
+  text-align: center;
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.result-title {
+  font-size: 2.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 12px #800080, 0 0 25px #000;
+  text-transform: uppercase;
+}
+
+.score {
+  font-size: 4rem;
+  color: #ff00ff;
+  text-shadow: 0 0 15px #00ff00, 0 0 30px #ffa500, 0 0 45px #000;
+  margin: 1.5rem 0;
+}
+
+.result-message {
+  font-size: 1.8rem;
+  color: #ffa500;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #000;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.pepega {
+  width: 180px;
+  max-width: 80%;
+  border: 6px solid #00ff00;
+  border-radius: 50%;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #ffa500;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.result-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.save-btn {
+  background: #ffa500;
+  color: #000;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border: 5px solid #ff00ff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.save-btn:hover {
+  background: #ff00ff;
+  color: #fff;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 30px #00ff00, 0 0 50px #ffa500;
+}
+
+.restart-btn {
+  background: #800080;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border: 5px solid #ffa500;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #00ff00;
+}
+
+.restart-btn:hover {
+  background: #00ffff;
+  color: #000;
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 30px #ff00ff, 0 0 50px #ffa500;
+}
+
+.footer {
+  font-size: 1.2rem;
+  color: #00ff00;
+  text-shadow: 0 0 8px #ff00ff;
+  text-align: center;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
+.footer a {
+  color: #ffa500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 15px #ff00ff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+  }
+
+  .quiz-container {
+    padding: 1.5rem;
+  }
+
+  .question {
+    font-size: 1.5rem;
+  }
+
+  .option-btn {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .progress {
+    font-size: 1rem;
+  }
+
+  .result-title {
+    font-size: 2rem;
+  }
+
+  .score {
+    font-size: 3rem;
+  }
+
+  .result-message {
+    font-size: 1.4rem;
+  }
+
+  .pepega {
+    width: 120px;
+  }
+
+  .save-btn, .restart-btn {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.5rem;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .footer {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .question {
+    font-size: 1.2rem;
+  }
+  }
